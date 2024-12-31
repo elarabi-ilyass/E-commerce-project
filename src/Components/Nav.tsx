@@ -1,9 +1,10 @@
 import React from 'react'
+import  Image  from '../assets/Screenshot 2024-12-31 150224.png'
 
 const Nav = () => {
   return (
     <div >
-      <nav  aria-label="Top" className={`fixed top-0 bg-neutral-50 left-0 right-0 z-50 h-20  flex items-center justify-between  p-4  `}>
+      <nav  aria-label="Top" className={`fixed top-0 bg-neutral-100 left-0 right-0 z-50 h-20  flex items-center justify-between  p-4  `}>
         <div className="w-full m-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Mobile menu button */}
@@ -12,28 +13,15 @@ const Nav = () => {
               className="lg:hidden flex items-center gap-x-2 text-gray-500"
             >
               <span className="sr-only">Open menu</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+              
             </button>
 
             {/* Logo */}
             <a href="#" className="flex items-center">
               <img
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                src={Image}
                 alt="Your Company"
-                className="h-8 w-auto"
+                className="h-16  w-auto"
               />
               
             </a>
