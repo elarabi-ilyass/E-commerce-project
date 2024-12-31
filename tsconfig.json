@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5", 
+    "module": "commonjs", 
+    "outDir": "./dist", 
+    "sourceMap": true, 
+    "strict": true, 
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true, 
+    "skipLibCheck": true, 
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@componentsCart/*": ["src/components/Cart/*"],
+      "@componentsCheckout/*": ["src/components/Checkout/*"],
+      "@componentsHome/*": ["src/components/Home/*"],
+      "@componentsProduct_Detail/*": ["src/components/Product_Detail/*"],
+      "@componentsProduct_Listing/*": ["src/components/Product_Listing/*"]
+    },
+    "include": ["src/**/*"], 
+    "exclude": ["node_modules", "dist"] 
+  }
+}
