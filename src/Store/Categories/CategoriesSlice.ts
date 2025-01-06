@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ThunkGetCategories } from './thunk/ThunkGetCategories'
+import  ThunkGetCategories  from './thunk/ThunkGetCategories'
 
 interface ICategory {
   id: number;
   title: string;
   product: string;
   image: string;
+  price: string;
+  alt: string;
 }
 
 interface Icategories {
@@ -33,7 +35,7 @@ const categoriesSlice = createSlice({
       state.records = action.payload;
       state.loading='succeeded'
     });
-    builder.addCase(ThunkGetCategories.pending, (state,action) => {
+    builder.addCase(ThunkGetCategories.rejected, (state,action) => {
       state.loading = 'failed';
       if(action.payload && typeof action.payload === 'string'){
         state.error = action.payload
