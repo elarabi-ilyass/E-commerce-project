@@ -1,18 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import  ThunkGetCategories  from './thunk/ThunkGetCategories'
+import { Tloading } from "../../../Types/shared";
+import { TCategory } from "../../../Types/categories";
 
-interface ICategory {
-  id: number;
-  title: string;
-  product: string;
-  image: string;
-  price: string;
-  alt: string;
-}
+
 
 interface Icategories {
-  records: ICategory[];
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+  records: TCategory[];
+  loading: Tloading;
   error: string | null;
 }
 

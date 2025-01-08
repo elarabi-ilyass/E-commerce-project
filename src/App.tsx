@@ -21,18 +21,7 @@ const routes = [
       { index: true, element: <Home /> },
       { path: 'Authentication', element: <Authentication /> },
       { path: 'Cart', element: <Cart /> },
-      {
-        path: 'Product_Details/:product',
-        element: <Product_Details />,
-        loader: ({ params }) => {
-          if (typeof params.product!=='string'||!/^[a-z]+$/i.test(params.product)) {
-            throw new Response('Bad Request', { status: 400, statusText: 'Invalid Product' });
-          }
-          console.log(params.product);
-          return true; 
-        },
-      },
-      
+      { path: 'Product_Details/:id',element: <Product_Details />,},
       { path: 'Product_Listing', element: <Product_Listing /> },
       { path: 'User_Account', element: <User_Account /> },
       { path: 'Wishlist', element: <Wishlist /> },

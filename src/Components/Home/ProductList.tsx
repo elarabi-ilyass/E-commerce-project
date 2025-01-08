@@ -1,7 +1,13 @@
 import React from "react";
+import { TCategory } from "../../../Types/categories";
+import { Link } from "react-router-dom";
 
-const ProductList = ({ records }) => {
 
+interface IState {
+  records: TCategory[];
+}
+
+const ProductList:React.FC<IState>=({ records}) => {
 
   return (
     <div className="bg-slate-50 py-16">
@@ -9,7 +15,7 @@ const ProductList = ({ records }) => {
         <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-14">Products</h2>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {records.map((product) => (
-            <a key={product.id} href={`/product/${product.id}`} className="group"> {/* Link to product details */}
+            <Link key={product.id} to={`/Product_Details/${product.id}`} className="group"> {/* Link to product details */}
               <img
                 src={product.image}
                 alt={product.alt}
@@ -19,7 +25,7 @@ const ProductList = ({ records }) => {
               <p className="mt-1 text-lg font-medium text-gray-900">
                 {product.price}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

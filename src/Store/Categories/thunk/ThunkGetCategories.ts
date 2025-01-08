@@ -1,13 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { TCategory } from "../../../Types/categories";
 
-type TCategory = {
-  id: number;
-  title: string;
-  product: string;
-  image: string;
-  price: string;
-  alt: string;
-};
+
 
 const ThunkGetCategories = createAsyncThunk<TCategory[], void, { rejectValue: string }>(
   "categoriesSlice/ThunkGetCategories",

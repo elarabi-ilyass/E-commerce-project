@@ -151,7 +151,7 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="mt-8 border-t border-gray-200 pt-8">
           <p className="text-sm text-gray-500">
-            Copyright © 2024 Ilyass, Inc.
+            Copyright © 2025 Ilyass, Inc.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 
-const ImagesSide = () => {
+const ImagesSide = ({records}) => {
   const [activeImage, setActiveImage] = useState(
     "https://tailwindui.com/plus/img/ecommerce-images/product-page-03-product-04.jpg"
   );

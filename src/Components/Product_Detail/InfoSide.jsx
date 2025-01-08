@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InfoSide = () => {
+const InfoSide = ({records}) => {
   return (
     <div>
         <h1 className="text-2xl mt-16 font-bold mb-4">Zip Tote Basket</h1>
