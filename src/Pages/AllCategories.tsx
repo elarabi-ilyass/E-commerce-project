@@ -1,18 +1,16 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React from 'react'
 
-const Category = () => {
+const AllCategories = () => {
   return (
+    <div>
     <section aria-labelledby="category-heading" className="bg-gray-50 mt-32 py-16 px-6 sm:py-24 sm:px-12 lg:px-16">
-    <div className="max-w-7xl mx-auto space-y-12">
+     <div className="max-w-7xl mx-auto space-y-12">
       {/* Heading and Browse All Categories Link */}
       <div className="flex justify-between items-center">
         <h2 id="category-heading" className="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Shop by Category
+          All Categories
         </h2>
-        <Link to="AllCategories" className="text-lg font-medium text-indigo-600 hover:text-indigo-700">
-          Browse all categories<span aria-hidden="true"> →</span>
-        </Link>
+        
       </div>
 
       {/* Category Grid */}
@@ -101,7 +99,8 @@ const Category = () => {
       </div>
     </div>
   </section>
-  );
-};
+    </div>
+  )
+}
 
-export default Category;
+export default AllCategories

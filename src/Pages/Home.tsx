@@ -5,14 +5,15 @@ import ProductList from '@componentsHome/ProductList';
 import SaleSection from '@componentsHome/SaleSection';
 import { useAppSelector, useAppDispatch } from "../Store/hooks";
 import { useEffect } from 'react';
-import { ThunkGetCategories } from '../Store/Categories/CategoriesSlice';
+import { ThunkGetProducts } from '../Store/Products/ProductsSlice';
+import React from 'react';
 
-const Home = () => {
+const Home:React.FC = () => {
   const dispatch = useAppDispatch();
-  const { records, loading, error } = useAppSelector(state => state.categories);
+  const { records, loading, error } = useAppSelector(state => state.Products);
 
   useEffect(() => {
-    dispatch(ThunkGetCategories());
+    dispatch(ThunkGetProducts());
   }, [dispatch]);
 
   return (

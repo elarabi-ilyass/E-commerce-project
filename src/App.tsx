@@ -12,6 +12,7 @@ import Wishlist from './Pages/Wishlist';
 import Checkout from './Pages/Checkout';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import AllCategories from './Pages/AllCategories';
 
 const routes = [
   {
@@ -23,6 +24,7 @@ const routes = [
       { path: 'Cart', element: <Cart /> },
       { path: 'Product_Details/:id',element: <Product_Details />,},
       { path: 'Product_Listing', element: <Product_Listing /> },
+      { path: 'AllCategories', element: <AllCategories/> },
       { path: 'User_Account', element: <User_Account /> },
       { path: 'Wishlist', element: <Wishlist /> },
       { path: 'Checkout', element: <Checkout /> },

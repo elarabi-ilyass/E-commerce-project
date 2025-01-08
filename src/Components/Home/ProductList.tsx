@@ -1,10 +1,10 @@
 import React from "react";
-import { TCategory } from "../../../Types/categories";
+import { TProduct } from "../../../Types/DataType";
 import { Link } from "react-router-dom";
 
 
 interface IState {
-  records: TCategory[];
+  records: TProduct[];
 }
 
 const ProductList:React.FC<IState>=({ records}) => {

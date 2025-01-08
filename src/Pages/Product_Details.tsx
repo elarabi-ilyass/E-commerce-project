@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../Store/hooks";
-import { ThunkGetProducts } from "../Store/Products/ProductsSlice";
+import { ThunkGetProductsById } from "../Store/Product/ProductsSliceById";
 
 const ProductDetails: React.FC = () => {
   // Extract product ID from the URL parameters
@@ -12,12 +12,12 @@ const ProductDetails: React.FC = () => {
   const [activeImage, setActiveImage] = useState<string>("");
 
   // Select product data from the Redux store
-  const { record, loading, error } = useAppSelector((state) => state.products);
+  const { record, loading, error } = useAppSelector((state) => state.Product);
 
   useEffect(() => {
     // Fetch product details if an ID is available
     if (id) {
-      dispatch(ThunkGetProducts(id));
+      dispatch(ThunkGetProductsById(id));
     }
   }, [dispatch, id]);
 
