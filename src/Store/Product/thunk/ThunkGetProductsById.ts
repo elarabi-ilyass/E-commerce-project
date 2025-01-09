@@ -6,7 +6,7 @@ const ThunkGetProductsById = createAsyncThunk<
   string,                 // Argument type (id)
   { rejectValue: string } // Rejected value type
 >(
-  "Product/ThunkGetProductsById",
+  "ProductsSliceById/ThunkGetProductsById",
   async (id, { rejectWithValue }) => {
     try {
       const response = await fetch(`http://localhost:5000/Products/${id}`);

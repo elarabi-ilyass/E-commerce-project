@@ -1,8 +1,8 @@
 export type TCategory = {
-        id: number;
-        title: string;
-        image: string;
-        alt: string;
+        id?: number;
+        title?: string;
+        image?: string;
+        alt?: string;
       }; 
 
       export type TProduct = {
