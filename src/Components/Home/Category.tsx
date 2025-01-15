@@ -8,7 +8,8 @@ const Category = () => {
       {/* Heading and Browse All Categories Link */}
       <div className="flex justify-between items-center">
         <h2 id="category-heading" className="text-3xl font-bold text-gray-900 sm:text-4xl">
-          Shop by Category
+          Shop by Category 
+
         </h2>
         <Link to="AllCategories" className="text-lg font-medium text-indigo-600 hover:text-indigo-700">
           Browse all categories<span aria-hidden="true"> →</span>

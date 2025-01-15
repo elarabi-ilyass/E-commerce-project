@@ -5,4 +5,12 @@ import  tsconfigPaths  from 'vite-tsconfig-paths';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),tsconfigPaths()],
+  server: {
+    port: 3000, // Set the port to 3000
+    hmr: true,   // Make sure HMR is enabled
+
+    watch: {
+      usePolling: true, // Fixes file change detection on some systems
+    },
+  },
 })

@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../Store/hooks";
 import { ThunkGetCategories } from "../Store/Categories/CategoriesSlice";
 import { TCategory } from "../../../Types/DataType";
+import { Link } from "react-router-dom";
 
 const AllCategories: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // Access Redux state
-  const { records, loading, error } = useAppSelector((state) => state.categories);
-  console.log(records)
+  const { categories, loading, error } = useAppSelector((state) => state.categories);
+  console.log(categories);
 
   useEffect(() => {
     dispatch(ThunkGetCategories());
@@ -39,8 +40,9 @@ const AllCategories: React.FC = () => {
 
           {/* Category Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {records?.map((category: TCategory) => (
+            {categories?.map((category: TCategory) => (
               <div className="relative group">
+              <Link to={`http://localhost:3000/Product_Listing?categorie=${category.title}`}>
                 <img
                   alt={category.alt}
                   src={category.image}
@@ -62,6 +64,7 @@ const AllCategories: React.FC = () => {
                     </p>
                   </div>
                 </div>
+                </Link>
               </div>
 
             ))}

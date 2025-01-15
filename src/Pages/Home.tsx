@@ -5,7 +5,7 @@ import ProductList from '@componentsHome/ProductList';
 import SaleSection from '@componentsHome/SaleSection';
 import { useAppSelector, useAppDispatch } from "../Store/hooks";
 import { useEffect } from 'react';
-import { ThunkGetProducts } from '../Store/Products/ProductsSlice';
+import { ThunkGetProducts ,resetProducts} from '../Store/Products/ProductsSlice';
 import React from 'react';
 
 const Home:React.FC = () => {
@@ -14,6 +14,7 @@ const Home:React.FC = () => {
 
   useEffect(() => {
     dispatch(ThunkGetProducts());
+    dispatch(resetProducts());
   }, [dispatch]);
 
   return (

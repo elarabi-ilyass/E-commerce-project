@@ -15,4 +15,7 @@ export type TCategory = {
         imagePosition?: {
           [key?: string]: string; // Example: "image1", "image2", etc.
         };
+        type?:{
+          [key?: string]: string; 
+        }
       }; 

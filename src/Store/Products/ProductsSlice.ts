@@ -20,7 +20,11 @@ const initialState: IProducts = {
 const ProductsSlice = createSlice({
   name: 'Products',
   initialState,
-  reducers: {},
+  reducers: {
+    resetProducts(state) {
+      state.records = [];
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(ThunkGetProducts.pending, (state) => {
       state.loading = 'pending';
@@ -40,5 +44,6 @@ const ProductsSlice = createSlice({
 
 });
 
+export const { resetProducts } = ProductsSlice.actions;
 export  {ThunkGetProducts};
 export default ProductsSlice.reducer;

@@ -12,6 +12,7 @@ import Wishlist from './Pages/Wishlist';
 import Checkout from './Pages/Checkout';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
+import Test from './Pages/Test';
 import AllCategories from './Pages/AllCategories';
 
 const routes = [
@@ -30,6 +31,7 @@ const routes = [
       { path: 'Checkout', element: <Checkout /> },
       { path: 'Login', element: <Login /> },
       { path: 'Register', element: <Register /> },
+      { path: 'Test' , element: <Test /> },
       { path: '*', element: <Error_Page /> },
     ],
   },
@@ -40,7 +42,9 @@ const router = createBrowserRouter(routes);
 function App() {
   return (
     <div className="min-h-screen bg-white">
+
       <RouterProvider router={router} />
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import  Image  from '../assets/Screenshot 2024-12-31 150224.png'
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
@@ -17,14 +18,14 @@ const Nav = () => {
             </button>
 
             {/* Logo */}
-            <a href="#" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img
                 src={Image}
                 alt="Your Company"
                 className="h-16  w-auto"
               />
               
-            </a>
+            </Link>
 
             {/* Navigation Links */}
             <div className="mr-96 lg:flex space-x-8">
