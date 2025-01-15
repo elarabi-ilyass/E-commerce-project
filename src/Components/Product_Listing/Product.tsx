@@ -16,7 +16,7 @@ const Product:React.RC<IState>=({ products }) => {
         Products
       </h2>
       <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
-        {products?.map((product) => (
+        {products?.slice(0,6)?.map((product) => (
           <Link
             key={product.id}
             to={`/Product_Details/${product.id}`}
@@ -76,7 +76,7 @@ const Product:React.RC<IState>=({ products }) => {
         </section>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6">
-        {products?.map((product) => (
+        {products?.slice(6,12)?.map((product) => (
           <Link
             key={product.id}
             to="/Product_Details"

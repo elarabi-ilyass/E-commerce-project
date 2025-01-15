@@ -52,20 +52,7 @@ import { nextSlide, prevSlide, ThunkGetCategories } from "../../Store/Categories
             <p className="mt-4 text-lg text-gray-300 rounded-md shadow-md">
               Thoughtfully designed objects for the workspace, home, and travel.
             </p>
-            <div className="flex justify-between mt-8">
-              <button
-                onClick={() => dispatch(prevSlide())}
-                className="px-4 py-2 bg-white text-black font-medium rounded-md shadow-md"
-              >
-                &#10094; {/* Left Arrow */}
-              </button>
-              <button
-                onClick={() => dispatch(nextSlide())}
-                className="px-4 py-2 bg-white text-black font-medium rounded-md shadow-md"
-              >
-                &#10095; {/* Right Arrow */}
-              </button>
-            </div>
+           
           </div>
         </div>
       ) : (

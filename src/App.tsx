@@ -14,32 +14,56 @@ import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Test from './Pages/Test';
 import AllCategories from './Pages/AllCategories';
+import {useState} from 'react';
+import ProtectedRoute from './utils/utils';
 
-const routes = [
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'Authentication', element: <Authentication /> },
-      { path: 'Cart', element: <Cart /> },
-      { path: 'Product_Details/:id',element: <Product_Details />,},
-      { path: 'Product_Listing', element: <Product_Listing /> },
-      { path: 'AllCategories', element: <AllCategories/> },
-      { path: 'User_Account', element: <User_Account /> },
-      { path: 'Wishlist', element: <Wishlist /> },
-      { path: 'Checkout', element: <Checkout /> },
-      { path: 'Login', element: <Login /> },
-      { path: 'Register', element: <Register /> },
-      { path: 'Test' , element: <Test /> },
-      { path: '*', element: <Error_Page /> },
-    ],
-  },
-];
 
-const router = createBrowserRouter(routes);
+
+
 
 function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const routes = [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        { index: true, element:(
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+             <Home />
+           </ProtectedRoute>
+          )  },
+        { path: 'Authentication', element: <Authentication /> },
+        { path: 'Cart', element: <Cart /> },
+        { path: 'Product_Details/:id',element:(
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+           <Product_Details />
+           </ProtectedRoute>
+          ),},
+        { path: 'Product_Listing', element:(
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <Product_Listing />
+           </ProtectedRoute>
+          ) },
+        { path: 'AllCategories', element:(
+          <ProtectedRoute isAuthenticated={isAuthenticated}>
+            <AllCategories/>
+          </ProtectedRoute>
+          )  },
+        { path: 'User_Account', element: <User_Account /> },
+        { path: 'Wishlist', element: <Wishlist /> },
+        { path: 'Checkout', element: <Checkout /> },
+        { path: 'Login', element: <Login setIsAuthenticated={setIsAuthenticated} /> },
+        { path: 'Register', element: <Register /> },
+        { path: 'Test' , element: <Test /> },
+        { path: '*', element: <Error_Page /> },
+      ],
+    },
+  ];
+  
+  const router = createBrowserRouter(routes);
   return (
     <div className="min-h-screen bg-white">
 
