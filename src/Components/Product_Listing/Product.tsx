@@ -44,7 +44,7 @@ const Product:React.RC<IState>=({ products }) => {
         >
           <img
             alt=""
-            src="https://tailwindui.com/plus/img/ecommerce-images/category-page-01-featured-collection.jpg"
+            src="https://wallpapercave.com/wp/wp3130193.jpg"
             className="w-full h-full object-cover"
           />
           <div

@@ -1,47 +1,64 @@
-import  { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../Store/hooks";
-import { ThunkGetCategories } from "../Store/Categories/CategoriesSlice";
+import React, { useState } from 'react';
 
+function ImageUpload() {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [error, setError] = useState(null);
 
-const Test = () => {
-  const dispatch = useAppDispatch();
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setError(null); // Clear any previous errors
+  };
 
-  // Access Redux state
-  const { categories, prevIndex } = useAppSelector((state) => state.categories);
-  console.log(categories)
-  console.log(prevIndex)
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  useEffect(() => {
-    dispatch(ThunkGetCategories());
-  }, [dispatch]);
+    if (!selectedFile) {
+      setError("Please select an image.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    fetch('http://localhost:5000/users', { // Your backend endpoint
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => {
+        if (!response.ok) { // Check for HTTP errors (4xx or 5xx)
+          return response.json().then(err => {throw new Error(err.message || response.statusText)}); // Extract error message from JSON if available
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.success) {
+          setImageUrl(data.imageUrl);
+        } else {
+          setError(data.message || "Upload failed.");
+        }
+      })
+      .catch(err => {
+        console.error("Upload error:", err);
+        setError(err.message || "An error occurred during upload.");
+      });
+  };
 
   return (
-          {/* Overlay Content */}
-        //   <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-40 rounded-md">
-        //   <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-        //     {currentCategory.title}
-        //   </h1>
-        //   <p className="mt-4 text-lg text-gray-300">
-        //     Thoughtfully designed objects for the workspace, home, and travel.
-        //   </p>
-  
-        //   {/* Navigation Buttons */}
-        //   <div className="flex gap-4 mt-8">
-        //     <button
-        //       onClick={() => dispatch(prevSlide())}
-        //       className="px-4 py-2 bg-white text-black font-medium rounded-md shadow-md hover:bg-gray-100"
-        //     >
-        //       &#10094; {/* Left Arrow */}
-        //     </button>
-        //     <button
-        //       onClick={() => dispatch(nextSlide())}
-        //       className="px-4 py-2 bg-white text-black font-medium rounded-md shadow-md hover:bg-gray-100"
-        //     >
-        //       &#10095; {/* Right Arrow */}
-        //     </button>
-        //   </div>
-        // </div>
-  )
+    <div className='p-40'>
+      <form onSubmit={handleSubmit}>
+        <input type="file" name="image" onChange={handleFileChange} />
+        <button type="submit">Upload</button>
+        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message */}
+      </form>
+
+      {imageUrl && (
+        <div>
+          <img src={imageUrl} alt="Uploaded Image" />
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default Test
+export default ImageUpload;

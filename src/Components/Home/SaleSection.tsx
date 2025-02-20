@@ -31,7 +31,7 @@ const SaleSection = () => {
               <div className="space-y-4">
                 <img
                   alt="Category 1"
-                  src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-01.jpg"
+                  src="https://tailwindui.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
                   className="w-full h-auto rounded-lg object-cover"
                 />
                
@@ -39,7 +39,7 @@ const SaleSection = () => {
               <div className="space-y-4">
                 <img
                   alt="Favorite 1"
-                  src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-favorite-01.jpg"
+                  src="https://tailwindui.com/plus-assets/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
                   className="w-full h-auto  -mt-28 rounded-lg object-cover"
                 />
                

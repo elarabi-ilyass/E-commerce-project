@@ -7,8 +7,8 @@ const Cause = () => {
     <div className="relative overflow-hidden bg-gray-50 px-6 py-24 sm:py-32 lg:px-8">
       <div className="absolute inset-0">
         <img
-          alt=""
-          src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-feature-section-full-width.jpg"
+          alt="https://www.thoughtco.com/thmb/C7RiS4QG5TXcBG2d_Sh9i4hFpg0=/3620x2036/smart/filters:no_upscale()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg"
+          src="https://www.thoughtco.com/thmb/C7RiS4QG5TXcBG2d_Sh9i4hFpg0=/3620x2036/smart/filters:no_upscale()/close-up-of-clothes-hanging-in-row-739240657-5a78b11f8e1b6e003715c0ec.jpg"
           className="h-full w-full object-cover"
         />
       </div>
@@ -16,11 +16,11 @@ const Cause = () => {
       <div className="relative mx-auto max-w-3xl text-center">
         <h2
           id="cause-heading"
-          className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl"
         >
           Long-term thinking
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
+        <p className="mt-6 text-lg leading-8 text-gray-400">
           We're committed to responsible, sustainable, and ethical
           manufacturing. Our small-scale approach allows us to focus on
           quality and reduce our impact. We're doing our best to delay the

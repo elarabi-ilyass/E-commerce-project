@@ -22,7 +22,7 @@ const Category = () => {
         <div className="relative group">
           <img
             alt="Two models wearing women's black cotton crewneck tee and off-white cotton crewneck tee."
-            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-featured-category.jpg"
+            src="https://th.bing.com/th/id/OIP.QSRVaP6PczAnEO67rQQlgQHaJQ?w=1080&h=1349&rs=1&pid=ImgDetMain"
             className="w-full h-80 object-cover rounded-lg"
           />
           <div
@@ -47,7 +47,7 @@ const Category = () => {
         <div className="relative group">
           <img
             alt="Wooden shelf with gray and olive drab green baseball caps, next to wooden clothes hanger with sweaters."
-            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-01.jpg"
+            src="https://th.bing.com/th/id/OIP.25N-KQKTi_InH5B9nIY3xAHaHa?w=177&h=180&c=7&r=0&o=5&pid=1.7"
             className="w-full h-80 object-cover rounded-lg"
           />
           <div
@@ -72,7 +72,7 @@ const Category = () => {
         <div className="relative group">
           <img
             alt="Walnut desk organizer set with white modular trays, next to porcelain mug on wooden desk."
-            src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-category-02.jpg"
+            src="https://th.bing.com/th/id/OIP.lBk-t9mlDzpxauJWJehmbgHaE7?rs=1&pid=ImgDetMain"
             className="w-full h-80 object-cover rounded-lg"
           />
           <div

@@ -19,3 +19,14 @@ export type TCategory = {
           [key?: string]: string; 
         }
       }; 
+
+      export type TUser = {
+        id?: number;
+        full_name?: string;
+        email?: string;
+        password?: string;
+        confirmation_password?: string;
+        image?: string;
+        status?: boolean;
+        Role?:string
+      }; 

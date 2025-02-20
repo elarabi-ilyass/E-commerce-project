@@ -13,6 +13,7 @@ import Checkout from './Pages/Checkout';
 import Register from './Pages/Register';
 import Login from './Pages/Login';
 import Test from './Pages/Test';
+import  Users  from './Pages/Users';
 import AllCategories from './Pages/AllCategories';
 import {useState} from 'react';
 import ProtectedRoute from './utils/utils';
@@ -58,6 +59,7 @@ function App() {
         { path: 'Login', element: <Login setIsAuthenticated={setIsAuthenticated} /> },
         { path: 'Register', element: <Register /> },
         { path: 'Test' , element: <Test /> },
+        { path: 'Users', element: <Users /> },
         { path: '*', element: <Error_Page /> },
       ],
     },

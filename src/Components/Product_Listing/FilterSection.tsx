@@ -20,7 +20,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
 
   const renderFilterOptions = (options: string[], key: string) => (
     <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-lg p-4 z-10">
-      <form className="space-y-3">
+      <form className="space-y-2">
         {options.map((option) => (
           <div key={option} className="flex items-center space-x-3">
             <input
@@ -39,11 +39,13 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
   );
 
   return (
-    <section aria-labelledby="filter-heading" className="space-y-4">
-      <hr className="w-5/6 h-px ml-24 bg-gray-300" />
-      <div className="space-y-4">
+    <section aria-labelledby="filter-heading" className="flex flex-col items-center w-full">
+      <hr className="w-5/6 h-px bg-gray-300 mb-4" />
+      
+      {/* Filter Buttons Container */}
+      <div className="flex flex-wrap gap-4 justify-center w-full">
         {/* Sort */}
-        <div className="relative">
+        <div className="relative flex flex-col items-center">
           <button
             onClick={() => toggleFilter("sortOpen")}
             className="flex items-center px-4 py-2 text-gray-400 hover:text-gray-600"
@@ -51,24 +53,12 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
             aria-haspopup="menu"
           >
             Sort
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="ml-2 w-5 h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                clipRule="evenodd"
-              />
-            </svg>
           </button>
           {filters.sortOpen && renderFilterOptions(Sorts, "sort")}
         </div>
 
         {/* Category */}
-        <div className="relative">
+        <div className="relative flex flex-col items-center">
           <button
             onClick={() => toggleFilter("categoryOpen")}
             className="flex items-center px-4 py-2 text-gray-400 hover:text-gray-600"
@@ -81,7 +71,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
         </div>
 
         {/* Brand */}
-        <div className="relative">
+        <div className="relative flex flex-col items-center">
           <button
             onClick={() => toggleFilter("brandOpen")}
             className="flex items-center px-4 py-2 text-gray-400 hover:text-gray-600"
@@ -94,7 +84,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
         </div>
 
         {/* Color */}
-        <div className="relative">
+        <div className="relative mb-12 flex flex-col items-center">
           <button
             onClick={() => toggleFilter("colorOpen")}
             className="flex items-center px-4 py-2 text-gray-400 hover:text-gray-600"
@@ -107,7 +97,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ getNewSearchParams }) => 
         </div>
 
         {/* Size */}
-        <div className="relative">
+        <div className="relative flex flex-col items-center">
           <button
             onClick={() => toggleFilter("sizeOpen")}
             className="flex items-center px-4 py-2 text-gray-400 hover:text-gray-600"
