@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../Store/hooks";
 import { ThunkGetProductsById } from "../Store/Product/ProductsSliceById";
 
-const ProductDetails: React.FC = () => {
+const ProductDetails: React.FC = ({cartOrders, setCartOrders}) => {
   // Extract product ID from the URL parameters
   const { id } = useParams<{ id: string | undefined }>();
   const dispatch = useAppDispatch();
@@ -16,10 +16,11 @@ const ProductDetails: React.FC = () => {
 
   useEffect(() => {
     // Fetch product details if an ID is available
+    localStorage.setItem('AddToCart', JSON.stringify(cartOrders));
     if (id) {
       dispatch(ThunkGetProductsById(id));
     }
-  }, [dispatch, id]);
+  }, [dispatch, id,cartOrders]);
 
   // Handle loading state
   if (loading === "loading") {
@@ -35,6 +36,27 @@ const ProductDetails: React.FC = () => {
   if (!record) {
     return <div>Product not found.</div>;
   }
+
+  const AddToCart = (e, record) => {
+    e.preventDefault();
+
+    // Check if the item already exists in the cart
+    const existingItem = cartOrders.find((item) => item.id === record.id);
+
+    if (existingItem) {
+      // Update quantity if item already exists
+      setCartOrders((prevOrders) =>
+        prevOrders.map((item) =>
+          item.id === record.id
+            ? { ...item, quantity: item.quantity + 1, Total: item.price * (item.quantity + 1) }
+            : item
+        )
+      );
+    } else {
+      // Add new item to the cart
+      setCartOrders([...cartOrders, { ...record, quantity: 1, Total: record.price }]);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 mt-4">
@@ -107,6 +129,7 @@ const ProductDetails: React.FC = () => {
             <div className="flex space-x-4">
               <button
                 type="submit"
+                onClick={(e)=>AddToCart(e,record)}
                 className="bg-indigo-600 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
                 Add to Bag

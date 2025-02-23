@@ -12,6 +12,7 @@ const Home:React.FC = () => {
   const dispatch = useAppDispatch();
   const { records, loading, error } = useAppSelector(state => state.Products);
 
+
   useEffect(() => {
     dispatch(ThunkGetProducts());
     dispatch(resetProducts());

@@ -1,17 +1,17 @@
-import React from 'react'
 import { Outlet } from "react-router-dom";
-import Nav from '../Components/Nav';
-import Footer from '../Components/Footer';
+import Nav from "../Components/Nav";
+import Footer from "../components/Footer";
 
-
-const Layout = () => {
+const Layout: React.FC = ({isAuthenticated,setIsAuthenticated}) => {
   return (
-    <div>
-    <Nav/>
-      <Outlet/>
-    <Footer/>
-    </div>
-  )
-}
+    <>
+      <Nav isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
-export default Layout
+export default Layout;

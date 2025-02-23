@@ -1,10 +1,10 @@
 import React from 'react'
-import ShoppingCart from "@componentsCart/ShoppingCart";
+import ItemSection from "@componentsCart/ItemSection";
 
-const Cart = () => {
+const Cart = ({cartItems}) => {
   return (
     <div>
-      <ShoppingCart/>
+      <ItemSection cartItems={cartItems}/>
     </div>
   )
 }
